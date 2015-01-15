@@ -1,0 +1,24 @@
+#switch{
+    margin-left: auto;
+    margin-right: auto;
+    width: 508px;
+    height: 83px;
+}
+
+#switch img{
+    display:none;
+}
+
+#switch span{
+    display:none;
+}
+
+#switch .active{
+    display:block;
+}
+
+.center{
+	text-align: center
+}
+
+

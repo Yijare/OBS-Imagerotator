@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="Javascript rotating image script">
+<title>Chaoschunk rotating Image script by Yijare v1.0.6</title>
+<link href="rotator.css" rel="stylesheet" type="text/css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="application/javascript"></script>
+
+<script type="application/javascript">
+     function swapImages(){
+      var $active = $('#switch .active');
+      var $next = ($('#switch .active').next().length > 0) ? $('#switch .active').next() : $('#switch img:first');
+      var wait = ($next.is($('#switch img:last'))) ? 120000 : 5000;
+ // Time values are now in a variable that interchanges them.
+ // 1000ms = 1 Second. keep that in mind
+      $active.fadeOut(function(){
+       $active.removeClass('active');
+       $next.fadeIn().addClass('active');
+      });
+       setTimeout(swapImages,wait);
+     }
+ 
+     $(document).ready(function(){
+      setTimeout(swapImages,5000);
+     });
+		</script>
+</head>
+
+<body class="center">
+<div id="switch">
+<img src="slider/first.png" />
+<img src="slider/second.png" />
+<img src="slider/third.png" />
+<img src="slider/fourth.png"  />
+<img src="slider/clear.png" class="active" />
+
+<!-- Add Images in the order you want them to apear,
+ the /clear.png is nesessary for this to work. 
+ -->
+</div>
+</body>
+</html>
+
